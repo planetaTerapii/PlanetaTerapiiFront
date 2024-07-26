@@ -1,0 +1,359 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #DAE3E5;
+  color: #2B4B4B; /* Set default text color */
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(218, 227, 229, 0.9); /* Semi-transparent background */
+  z-index: 1000;
+}
+
+nav .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Ensure space between logo and menu */
+  align-items: center; /* Align items vertically centered */
+  padding: 1rem;
+}
+
+nav .desktop-logo {
+  height: 80px; /* Adjust the height of the logo as needed */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: #2A6F6C;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #6BA4A3; /* Hover color for links */
+}
+
+nav .hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+nav .hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #2A6F6C;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Ensure unordered and ordered lists have proper margin and padding */
+section ul, section ol {
+  margin: 1rem 0 1rem 1.5rem; /* Adjust as needed */
+  padding: 0;
+}
+
+section ul li, section ol li {
+  color: #2B4B4B; /* Match text color */
+  line-height: 1.6;
+  margin-bottom: 0.5rem; /* Add spacing between list items */
+}
+
+/* Specific styles for mobile */
+@media (max-width: 768px) {
+  header .join-us-text {
+    bottom: 10px; /* Position the text at the bottom for mobile */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem; /* Adjust size for mobile */
+    padding: 0.5rem 1rem; /* Adjust padding for mobile */
+    width: 90%; /* Make it wider on mobile */
+  }
+
+  main {
+    padding-top: 60px; /* Adjust padding for mobile to account for the navbar height */
+  }
+
+  nav ul li a {
+    font-size: 1.5rem; /* Larger font size for mobile menu items */
+    color: #2A6F6C; /* Ensure link color matches design */
+  }
+
+  nav ul li a:hover {
+    color: #6BA4A3; /* Hover color for mobile links */
+  }
+}
+
+main {
+  max-width: 1200px; /* Increase the max-width for wider sections */
+  margin: 60px auto 0;
+  padding: 2rem;
+  padding-top: 100px; /* Increase padding to account for the navbar height */
+}
+
+section {
+  padding: 2rem 0;
+}
+
+section h2 {
+  color: #2A6F6C;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  color: #2B4B4B;
+  line-height: 1.6;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem; /* Adjusted to appear after the form */
+  justify-content: center;
+}
+
+.contact-icons a {
+  color: #2A6F6C;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.contact-icons a:hover {
+  color: #6BA4A3;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem; /* Padding added to form for spacing */
+}
+
+form div {
+  flex: 1;
+  min-width: 200px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2A6F6C;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #95C0C1;
+  border-radius: 4px;
+}
+
+form input::placeholder, form textarea::placeholder {
+  color: #95C0C1; /* Placeholder text color */
+}
+
+form button {
+  background-color: #2A6F6C;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+form button:hover {
+  background-color: #6BA4A3;
+}
+
+footer {
+  background-color: #2A6F6C;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #DAE3E5;
+}
+
+header {
+  background-image: url('./images/Background.webp'); /* Ensure this path points to your main background image in the public directory */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Cunia', sans-serif;
+  text-align: center;
+  position: relative;
+  height: 100vh; /* Full height for desktop */
+}
+
+header h1, header h2, header p {
+  color: #2B4B4B; /* Text color in the header */
+}
+
+header h1 {
+  font-size: 1.5rem; /* Smaller font size for h1 */
+  margin: 0.5rem 0;
+}
+
+header h2 {
+  font-size: 1rem; /* Smaller font size for h2 */
+  margin: 0.5rem 0;
+}
+
+header p {
+  font-size: 0.5rem; /* Smaller font size for paragraph */
+  margin: 0.5rem 0;
+}
+
+header .join-us-text {
+  position: absolute;
+  bottom: 20px; /* Position the text at the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem; /* Adjust size as needed */
+  color: white; /* Ensure text color is visible */
+  background-color: rgba(42, 111, 108, 0.7); /* Semi-transparent background */
+  padding: 1rem 2rem; /* Padding for better readability */
+  border-radius: 10px; /* Rounded corners */
+  font-family: 'Cunia', sans-serif; /* Use the Cunia font */
+  text-align: center; /* Center the text */
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  header {
+    background-image: url('./images/Background2.webp'); /* Ensure this path points to your main background image in the public directory */
+    height: 180px; /* Set a fixed height for the header */
+    width: 100%;
+    background-size: cover; /* Ensures the entire image covers the header */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-position: center; /* Centers the background image */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+    margin-top: 50px;
+  }
+
+  header .join-us-text {
+    position: absolute;
+    bottom: 10px; /* Position the text at the bottom for mobile */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem; /* Adjust size for mobile */
+    padding: 0.5rem 1rem; /* Adjust padding for mobile */
+    width: 90%; /* Make it wider on mobile */
+  }
+}
+
+.logo {
+  display: none;
+}
+
+.desktop-logo {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  nav .mobile-logo {
+    height: 50px; /* Adjust the height of the logo as needed */
+  }
+
+  main {
+    padding-top: 0; /* Remove extra padding that might cause empty space */
+    margin-top: 0; /* Remove any margin that might cause empty space */
+    padding-top: 100px; /* Increase padding to account for the navbar height */
+  }
+}
+
+@media (max-width: 768px) {
+  nav .nav-container {
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  nav .hamburger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(218, 227, 229, 0.9);
+    padding-top: 4rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 1.5rem; /* Larger font size for mobile menu items */
+    color: #2A6F6C; /* Ensure link color matches design */
+  }
+
+  nav ul li a:hover {
+    color: #6BA4A3; /* Hover color for mobile links */
+  }
+}
+
+.team-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.team-images img {
+  width: 32%; /* 32% width for three images in a row with space in between */
+  border-radius: 8px; /* Optional: add some border radius for better aesthetics */
+}
+
+@media (max-width: 768px) {
+  .team-images img {
+    width: 100%; /* Full width for mobile view */
+  }
+}
