@@ -267,10 +267,10 @@ function App() {
         >
           <h2>Наша команда</h2>
           <div className="team-images">
+            <img src={teamImage4} alt="Team Member 4" />
             <img src={teamImage1} alt="Team Member 1" />
             <img src={teamImage2} alt="Team Member 2" />
             <img src={teamImage3} alt="Team Member 3" />
-            <img src={teamImage4} alt="Team Member 4" />
             <img src={teamImage6} alt="Team Member 6" />
             <img src={teamImage7} alt="Team Member 7" />
             <img src={teamImage8} alt="Team Member 8" />
