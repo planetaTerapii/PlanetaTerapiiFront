@@ -10,7 +10,6 @@ import teamImage1 from "./team/team1.webp";
 import teamImage2 from "./team/team2.webp";
 import teamImage3 from "./team/team3.webp";
 import teamImage4 from "./team/team4.webp";
-import teamImage5 from "./team/team5.webp";
 import teamImage6 from "./team/team6.webp";
 import teamImage7 from "./team/team7.webp";
 import teamImage8 from "./team/team8.webp";
@@ -272,7 +271,6 @@ function App() {
             <img src={teamImage2} alt="Team Member 2" />
             <img src={teamImage3} alt="Team Member 3" />
             <img src={teamImage4} alt="Team Member 4" />
-            <img src={teamImage5} alt="Team Member 5" />
             <img src={teamImage6} alt="Team Member 6" />
             <img src={teamImage7} alt="Team Member 7" />
             <img src={teamImage8} alt="Team Member 8" />
