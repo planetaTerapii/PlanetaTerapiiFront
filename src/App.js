@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaEnvelope, FaInstagram } from "react-icons/fa";
 import { TbMapSearch } from "react-icons/tb";
 import { FaRegCalendarCheck } from "react-icons/fa6";
@@ -6,18 +6,16 @@ import "./App.css";
 import logoDesktop from "./images/logo-desktop.png"; // Desktop logo
 import logoMobile from "./images/logo-mobile.png"; // Mobile logo
 
-import teamImage1 from "./team/team1.jpg";
-import teamImage2 from "./team/team2.jpg";
-import teamImage3 from "./team/team3.jpg";
-import teamImage4 from "./team/team4.jpg";
-import teamImage5 from "./team/team5.jpg";
-import teamImage6 from "./team/team6.jpg";
-import teamImage7 from "./team/team7.jpg";
-import teamImage8 from "./team/team8.jpg";
-import teamImage9 from "./team/team9.jpg";
-import teamImage10 from "./team/team10.jpg";
-
-import { useInView } from "react-intersection-observer";
+import teamImage1 from "./team/team1.webp";
+import teamImage2 from "./team/team2.webp";
+import teamImage3 from "./team/team3.webp";
+import teamImage4 from "./team/team4.webp";
+import teamImage5 from "./team/team5.webp";
+import teamImage6 from "./team/team6.webp";
+import teamImage7 from "./team/team7.webp";
+import teamImage8 from "./team/team8.webp";
+import teamImage9 from "./team/team9.webp";
+import teamImage10 from "./team/team10.webp";
 
 function App() {
   const [name, setName] = useState("");
@@ -26,6 +24,9 @@ function App() {
   const [message, setMessage] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const sectionsRef = useRef([]);
 
   const handleMenuToggle = (e) => {
     e.stopPropagation();
@@ -52,10 +53,39 @@ function App() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          } else {
+            entry.target.classList.remove("is-visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    sectionsRef.current.forEach((section) => {
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sectionsRef.current.forEach((section) => {
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
+
   const handleScroll = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
-    const offset = window.innerWidth <= 768 ? 60 : 100; 
+    const offset = window.innerWidth <= 768 ? 60 : 100;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -82,18 +112,10 @@ function App() {
     );
     const data = await response.json();
     console.log(data.message);
+    setFormSubmitted(true);
+    setShowSuccessMessage(true);
+    setTimeout(() => setShowSuccessMessage(false), 5000);
   };
-
-  // Intersection observer setup
-  const { ref: reviewRef, inView: reviewInView } = useInView({ triggerOnce: true });
-  const { ref: priceRef, inView: priceInView } = useInView({ triggerOnce: true });
-  const { ref: teamRef, inView: teamInView } = useInView({ triggerOnce: true });
-  const { ref: franchiseRef, inView: franchiseInView } = useInView({ triggerOnce: true });
-  const { ref: pointsRef, inView: pointsInView } = useInView({ triggerOnce: true });
-  const { ref: financeRef, inView: financeInView } = useInView({ triggerOnce: true });
-  const { ref: stageRef, inView: stageInView } = useInView({ triggerOnce: true });
-  const { ref: supportRef, inView: supportInView } = useInView({ triggerOnce: true });
-  const { ref: contactRef, inView: contactInView } = useInView({ triggerOnce: true });
 
   return (
     <div className="App">
@@ -176,7 +198,11 @@ function App() {
         </div>
       </header>
       <main>
-        <section id="review" ref={reviewRef} className={reviewInView ? "fade-in" : ""}>
+        <section
+          id="review"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h2>Хто ми</h2>
           <p>
             Ми - центр корекції та розвитку мовлення для дітей, організація, яка
@@ -202,7 +228,11 @@ function App() {
             розвивати свої таланти і здібності в повній мірі.
           </p>
         </section>
-        <section id="price" ref={priceRef} className={priceInView ? "fade-in" : ""}>
+        <section
+          id="price"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2>Вартість</h2>
           <h3>Індивідуальні заняття:</h3>
           <ul>
@@ -231,7 +261,11 @@ function App() {
             <li>Польська мова — 100 zł - 1 год</li>
           </ul>
         </section>
-        <section id="team" ref={teamRef} className={teamInView ? "fade-in" : ""}>
+        <section
+          id="team"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>Наша команда</h2>
           <div className="team-images">
             <img src={teamImage1} alt="Team Member 1" />
@@ -246,7 +280,11 @@ function App() {
             <img src={teamImage10} alt="Team Member 10" />
           </div>
         </section>
-        <section id="franchise" ref={franchiseRef} className={franchiseInView ? "fade-in" : ""}>
+        <section
+          id="franchise"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>Переваги франшизи</h2>
           <ul>
             <li>
@@ -283,7 +321,11 @@ function App() {
             </li>
           </ul>
         </section>
-        <section id="points" ref={pointsRef} className={pointsInView ? "fade-in" : ""}>
+        <section
+          id="points"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>Вимоги до франчайзі</h2>
           <ul>
             <li>
@@ -299,7 +341,11 @@ function App() {
             </li>
           </ul>
         </section>
-        <section id="finance" ref={financeRef} className={financeInView ? "fade-in" : ""}>
+        <section
+          id="finance"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Фінансові умови</h2>
           <ul>
             <li>Первинний внесок:** $10,000</li>
@@ -308,7 +354,11 @@ function App() {
             <li>Дохідність: 5000$чистого прибутку щомісяця</li>
           </ul>
         </section>
-        <section id="stage" ref={stageRef} className={stageInView ? "fade-in" : ""}>
+        <section
+          id="stage"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2>Етапи відкриття</h2>
           <ol>
             <li>Заявка: Подання заявки на франшизу.</li>
@@ -328,7 +378,11 @@ function App() {
             </li>
           </ol>
         </section>
-        <section id="support" ref={supportRef} className={supportInView ? "fade-in" : ""}>
+        <section
+          id="support"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2>Підтримка франчайзі</h2>
           <ul>
             <li>
@@ -346,55 +400,66 @@ function App() {
             </li>
           </ul>
         </section>
-        <section id="contact" ref={contactRef} className={contactInView ? "fade-in" : ""}>
+        <section
+          id="contact"
+          className="fade-up"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           <h2>Контакти</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name">Ім'я:</label>
-              <input
-                type="text"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
+          {formSubmitted ? (
+            <div
+              className={`success-message ${
+                showSuccessMessage ? "visible" : ""
+              }`}
+            >
+              Ваше повідомлення було успішно надіслано!
             </div>
-            <div>
-              <label htmlFor="email">Адрес e-mail:</label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="phone">Номер телефону:</label>
-              <input
-                type="tel"
-                id="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-            </div>
-            <div style={{ flexBasis: "100%" }}>
-              <label htmlFor="message">Повідомлення:</label>
-              <textarea
-                id="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-              ></textarea>
-            </div>
-            <button type="submit">Відправити</button>
-          </form>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="name">Ім'я:</label>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email">Адрес e-mail:</label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="phone">Номер телефону:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                />
+              </div>
+              <div style={{ flexBasis: "100%" }}>
+                <label htmlFor="message">Повідомлення:</label>
+                <textarea
+                  id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                ></textarea>
+              </div>
+              <button type="submit">Відправити</button>
+            </form>
+          )}
           {responseMessage && <p>{responseMessage}</p>}
           <div className="contact-icons">
-            <a href="mailto:info@logopediacompany.com" aria-label="Email">
-              <FaEnvelope />
-            </a>
             <a
               href="https://www.instagram.com/planetaterapii_wro?igsh=MWFtejEyM3pmajZjZA=="
               target="_blank"

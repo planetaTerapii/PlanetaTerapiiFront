@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #DAE3E5;
-  color: #2B4B4B; /* Set default text color */
+  font-family: "Roboto", sans-serif;
+  background-color: #dae3e5;
+  color: #2b4b4b; /* Set default text color */
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 nav {
@@ -39,12 +40,12 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #2A6F6C;
+  color: #2a6f6c;
   text-decoration: none;
 }
 
 nav ul li a:hover {
-  color: #6BA4A3; /* Hover color for links */
+  color: #6ba4a3; /* Hover color for links */
 }
 
 nav .hamburger {
@@ -55,21 +56,52 @@ nav .hamburger {
 nav .hamburger div {
   width: 25px;
   height: 3px;
-  background-color: #2A6F6C;
+  background-color: #2a6f6c;
   margin: 5px;
   transition: all 0.3s ease;
 }
 
 /* Ensure unordered and ordered lists have proper margin and padding */
-section ul, section ol {
+section ul,
+section ol {
   margin: 1rem 0 1rem 1.5rem; /* Adjust as needed */
   padding: 0;
 }
 
-section ul li, section ol li {
-  color: #2B4B4B; /* Match text color */
+section ul li,
+section ol li {
+  color: #2b4b4b; /* Match text color */
   line-height: 1.6;
   margin-bottom: 0.5rem; /* Add spacing between list items */
+}
+
+section {
+  padding: 2rem 0;
+  overflow: hidden; /* Prevent overflow during animations */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+section h2 {
+  color: #2a6f6c;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  color: #2b4b4b;
+  line-height: 1.6;
+}
+
+/* Animation Styles */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Specific styles for mobile */
@@ -89,11 +121,11 @@ section ul li, section ol li {
 
   nav ul li a {
     font-size: 1.5rem; /* Larger font size for mobile menu items */
-    color: #2A6F6C; /* Ensure link color matches design */
+    color: #2a6f6c; /* Ensure link color matches design */
   }
 
   nav ul li a:hover {
-    color: #6BA4A3; /* Hover color for mobile links */
+    color: #6ba4a3; /* Hover color for mobile links */
   }
 }
 
@@ -102,21 +134,8 @@ main {
   margin: 60px auto 0;
   padding: 2rem;
   padding-top: 100px; /* Increase padding to account for the navbar height */
-}
-
-section {
-  padding: 2rem 0;
-}
-
-section h2 {
-  color: #2A6F6C;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-section p {
-  color: #2B4B4B;
-  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .contact-icons {
@@ -127,13 +146,13 @@ section p {
 }
 
 .contact-icons a {
-  color: #2A6F6C;
+  color: #2a6f6c;
   font-size: 2rem;
   padding: 0.5rem;
 }
 
 .contact-icons a:hover {
-  color: #6BA4A3;
+  color: #6ba4a3;
 }
 
 form {
@@ -141,6 +160,7 @@ form {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem; /* Padding added to form for spacing */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 form div {
@@ -151,22 +171,24 @@ form div {
 form label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #2A6F6C;
+  color: #2a6f6c;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #95C0C1;
+  border: 1px solid #95c0c1;
   border-radius: 4px;
 }
 
-form input::placeholder, form textarea::placeholder {
-  color: #95C0C1; /* Placeholder text color */
+form input::placeholder,
+form textarea::placeholder {
+  color: #95c0c1; /* Placeholder text color */
 }
 
 form button {
-  background-color: #2A6F6C;
+  background-color: #2a6f6c;
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -176,14 +198,16 @@ form button {
 }
 
 form button:hover {
-  background-color: #6BA4A3;
+  background-color: #6ba4a3;
 }
 
 footer {
-  background-color: #2A6F6C;
+  background-color: #2a6f6c;
   color: white;
   text-align: center;
   padding: 1rem;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 footer a {
@@ -192,11 +216,11 @@ footer a {
 }
 
 footer a:hover {
-  color: #DAE3E5;
+  color: #dae3e5;
 }
 
 header {
-  background-image: url('./images/Background.webp'); /* Ensure this path points to your main background image in the public directory */
+  background-image: url("./images/Background.webp"); /* Ensure this path points to your main background image in the public directory */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; /* Prevents the background image from repeating */
@@ -204,14 +228,18 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: 'Cunia', sans-serif;
+  font-family: "Cunia", sans-serif;
   text-align: center;
   position: relative;
   height: 100vh; /* Full height for desktop */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-header h1, header h2, header p {
-  color: #2B4B4B; /* Text color in the header */
+header h1,
+header h2,
+header p {
+  color: #2b4b4b; /* Text color in the header */
 }
 
 header h1 {
@@ -239,14 +267,14 @@ header .join-us-text {
   background-color: rgba(42, 111, 108, 0.7); /* Semi-transparent background */
   padding: 1rem 2rem; /* Padding for better readability */
   border-radius: 10px; /* Rounded corners */
-  font-family: 'Cunia', sans-serif; /* Use the Cunia font */
+  font-family: "Cunia", sans-serif; /* Use the Cunia font */
   text-align: center; /* Center the text */
   width: auto;
 }
 
 @media (max-width: 768px) {
   header {
-    background-image: url('./images/Background2.webp'); /* Ensure this path points to your main background image in the public directory */
+    background-image: url("./images/Background2.webp"); /* Ensure this path points to your main background image in the public directory */
     height: 180px; /* Set a fixed height for the header */
     width: 100%;
     background-size: cover; /* Ensures the entire image covers the header */
@@ -325,18 +353,18 @@ header .join-us-text {
     align-items: center;
     gap: 1.5rem;
   }
-  
+
   nav ul.active {
     display: flex;
   }
 
   nav ul li a {
     font-size: 1.5rem; /* Larger font size for mobile menu items */
-    color: #2A6F6C; /* Ensure link color matches design */
+    color: #2a6f6c; /* Ensure link color matches design */
   }
 
   nav ul li a:hover {
-    color: #6BA4A3; /* Hover color for mobile links */
+    color: #6ba4a3; /* Hover color for mobile links */
   }
 }
 
@@ -356,4 +384,17 @@ header .join-us-text {
   .team-images img {
     width: 100%; /* Full width for mobile view */
   }
+}
+
+.success-message {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  font-size: 1.2rem;
+  color: green;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.success-message.visible {
+  opacity: 1;
 }
