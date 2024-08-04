@@ -368,24 +368,6 @@ header .join-us-text {
   }
 }
 
-.team-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.team-images img {
-  width: 32%; /* 32% width for three images in a row with space in between */
-  border-radius: 8px; /* Optional: add some border radius for better aesthetics */
-}
-
-@media (max-width: 768px) {
-  .team-images img {
-    width: 100%; /* Full width for mobile view */
-  }
-}
-
 .success-message {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -397,4 +379,44 @@ header .join-us-text {
 
 .success-message.visible {
   opacity: 1;
+}
+
+
+.finance-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.finance-item {
+  background-color: #fff;
+  border: 1px solid #95c0c1;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 calc(50% - 1rem);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.finance-icon {
+  font-size: 2rem;
+  color: #2a6f6c;
+}
+
+.finance-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.finance-text h3 {
+  margin: 0;
+  color: #2a6f6c;
+}
+
+.finance-text p {
+  margin: 0;
+  color: #2b4b4b;
 }

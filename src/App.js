@@ -6,16 +6,6 @@ import "./App.css";
 import logoDesktop from "./images/logo-desktop.png"; // Desktop logo
 import logoMobile from "./images/logo-mobile.png"; // Mobile logo
 
-import teamImage1 from "./team/team1.webp";
-import teamImage2 from "./team/team2.webp";
-import teamImage3 from "./team/team3.webp";
-import teamImage4 from "./team/team4.webp";
-import teamImage6 from "./team/team6.webp";
-import teamImage7 from "./team/team7.webp";
-import teamImage8 from "./team/team8.webp";
-import teamImage9 from "./team/team9.webp";
-import teamImage10 from "./team/team10.webp";
-
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -145,13 +135,8 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="#price" onClick={(e) => handleScroll(e, "price")}>
-                  Вартість
-                </a>
-              </li>
-              <li>
-                <a href="#team" onClick={(e) => handleScroll(e, "team")}>
-                  Наша команда
+                <a href="#service" onClick={(e) => handleScroll(e, "service")}>
+                  Наші послуги
                 </a>
               </li>
               <li>
@@ -204,79 +189,45 @@ function App() {
         >
           <h2>Хто ми</h2>
           <p>
-            Ми - центр корекції та розвитку мовлення для дітей, організація, яка
-            стоїть на передовій боротьби за мовленнєве розвиток і соціальну
-            інтеграцію дітей з різними формами мовленнєвих порушень. <br />
-            Наша місія - забезпечити кожній дитині можливість знайти власний
-            голос і виразити себе у повній мірі, відкриваючи нові горизонти для
-            їхнього майбутнього. Ми віримо в силу спілкування як основу для
-            розуміння, навчання та взаємодії з навколишнім світом. Наша робота
-            заснована на глибокій емпатії до кожної дитини та її сім'ї, і ми
-            прагнемо створити середовище, де кожен може відчувати себе безпечно,
-            підтримано і здатним до росту. <br />
-            Наша команда - це згуртована група професіоналів, включаючи
-            логопедів, психологів, педагогів та медичних працівників, які
-            присвятили себе цій важливій справі. Ми об'єднані спільною метою -
-            розширювати можливості дітей через індивідуально адаптовані програми
-            розвитку мовлення, інтегруючи найновіші наукові дослідження та
-            інноваційні методики в нашу роботу. <br />В нашому центрі ми не
-            просто працюємо над поліпшенням мовленнєвих навичок; ми створюємо
-            майбутнє, де кожна дитина може впевнено стати на шлях самовираження
-            та самореалізації. Ми пишаємося можливістю впливати на життя,
-            змінювати їх на краще, надаючи дітям інструменти та віру в себе, щоб
-            розвивати свої таланти і здібності в повній мірі.
+            Ми - центр корекції та розвитку мовлення для дітей, що сприяє
+            мовленнєвому розвитку та соціальній інтеграції дітей з різними
+            мовленнєвими порушеннями. Наша команда професіоналів, включаючи
+            логопедів, психологів, педагогів та медичних працівників, допомагає
+            дітям знайти свій голос і виразити себе.
           </p>
         </section>
         <section
-          id="price"
+          id="service"
           className="fade-up"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>Вартість</h2>
+          <h2>Наші послуги</h2>
           <h3>Індивідуальні заняття:</h3>
           <ul>
-            <li>Первинна діагностика (логопед) — 250 zł</li>
-            <li>Психолог — 180 zł</li>
-            <li>Сенсорна інтеграція — 160 zł</li>
-            <li>Логопед — 120 zł - 45 хв | 100 zł - 30 хв</li>
-            <li>Дефектолог — 120 zł - 45 хв | 100 zł - 30 хв</li>
-            <li>Діагностика звуковимови — 160 zł - 45 хв</li>
-            <li>Первинна діагностика (нейропсихолог) — 250 zł</li>
-            <li>Нейропсихолог — 120 zł</li>
-            <li>Логопедичний масаж — 70 zł - 20 хв</li>
-            <li>Мозочкова стимуляція — 140 zł</li>
-            <li>Доготерапія — 120 zł - 45 хв | 100 zł - 30 хв</li>
-            <li>Консультація поведінкового терапевта — 160 zł</li>
-            <li>Поведінковий терапевт — 120 zł</li>
-            <li>Польська мова — 120 zł - 45 хв</li>
+            <li>Первинна діагностика (логопед)</li>
+            <li>Психолог</li>
+            <li>Сенсорна інтеграція</li>
+            <li>Логопед</li>
+            <li>Дефектолог</li>
+            <li>Діагностика звуковимови</li>
+            <li>Первинна діагностика (нейропсихолог)</li>
+            <li>Нейропсихолог</li>
+            <li>Логопедичний масаж</li>
+            <li>Мозочкова стимуляція</li>
+            <li>Доготерапія</li>
+            <li>Консультація поведінкового терапевта</li>
+            <li>Поведінковий терапевт</li>
+            <li>Польська мова</li>
           </ul>
 
           <h3>Групові заняття:</h3>
           <ul>
-            <li>Розвиток побутових та соціальних навичок — 120 zł - 2 год</li>
-            <li>Розвиток мовлення — 120 zł - 2 год</li>
-            <li>Підготовка до школи — 140 zł - 2 год</li>
-            <li>Доготерапія — 80 zł - 1 год</li>
-            <li>Польська мова — 100 zł - 1 год</li>
+            <li>Розвиток побутових та соціальних навичок</li>
+            <li>Розвиток мовлення</li>
+            <li>Підготовка до школи</li>
+            <li>Доготерапія</li>
+            <li>Польська мова</li>
           </ul>
-        </section>
-        <section
-          id="team"
-          className="fade-up"
-          ref={(el) => (sectionsRef.current[2] = el)}
-        >
-          <h2>Наша команда</h2>
-          <div className="team-images">
-            <img src={teamImage4} alt="Team Member 4" />
-            <img src={teamImage1} alt="Team Member 1" />
-            <img src={teamImage2} alt="Team Member 2" />
-            <img src={teamImage3} alt="Team Member 3" />
-            <img src={teamImage6} alt="Team Member 6" />
-            <img src={teamImage7} alt="Team Member 7" />
-            <img src={teamImage8} alt="Team Member 8" />
-            <img src={teamImage9} alt="Team Member 9" />
-            <img src={teamImage10} alt="Team Member 10" />
-          </div>
         </section>
         <section
           id="franchise"
@@ -345,13 +296,46 @@ function App() {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2>Фінансові умови</h2>
-          <ul>
-            <li>Первинний внесок:** $10,000</li>
-            <li>Роялті: 2%від щомісячного доходу</li>
-            <li>Інвестиції від 10 000$( в залежності від міста)</li>
-            <li>Дохідність: 5000$чистого прибутку щомісяця</li>
-          </ul>
+          <div className="finance-container">
+            <div className="finance-item">
+              <div className="finance-icon">
+                <i class="fas fa-hand-holding-usd"></i>
+              </div>
+              <div className="finance-text">
+                <h3>Первинний внесок</h3>
+                <p>$10,000</p>
+              </div>
+            </div>
+            <div className="finance-item">
+              <div className="finance-icon">
+                <i class="fas fa-percentage"></i>
+              </div>
+              <div className="finance-text">
+                <h3>Роялті</h3>
+                <p>2% від щомісячного доходу</p>
+              </div>
+            </div>
+            <div className="finance-item">
+              <div className="finance-icon">
+                <i class="fas fa-wallet"></i>
+              </div>
+              <div className="finance-text">
+                <h3>Інвестиції</h3>
+                <p>від $10,000 (в залежності від міста)</p>
+              </div>
+            </div>
+            <div className="finance-item">
+              <div className="finance-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div className="finance-text">
+                <h3>Дохідність</h3>
+                <p>$5000 чистого прибутку щомісяця</p>
+              </div>
+            </div>
+          </div>
         </section>
+
         <section
           id="stage"
           className="fade-up"
