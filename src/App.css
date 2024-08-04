@@ -85,11 +85,57 @@ section h2 {
   color: #2a6f6c;
   font-size: 2rem;
   margin-bottom: 1rem;
+  font-family: 'Comic Sans MS', sans-serif; /* Playful font */
 }
 
 section p {
   color: #2b4b4b;
   line-height: 1.6;
+}
+
+.section-bg-blue {
+  background-color: #a2d5f2;
+}
+
+.section-bg-yellow {
+  background-color: #f9f871;
+}
+
+.section-bg-green {
+  background-color: #a3de83;
+}
+
+.section-bg-orange {
+  background-color: #ffb677;
+}
+
+.section-bg-purple {
+  background-color: #d4a5a5;
+}
+
+.section-bg-pink {
+  background-color: #ffabbc;
+}
+
+.section-bg-cyan {
+  background-color: #8dd7cf;
+}
+
+.section-bg-lightblue {
+  background-color: #c9e8f2;
+}
+
+.section-bg-blue,
+.section-bg-yellow,
+.section-bg-green,
+.section-bg-orange,
+.section-bg-purple,
+.section-bg-pink,
+.section-bg-cyan,
+.section-bg-lightblue {
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Top and bottom padding */
+  margin: 20px 0; /* Top and bottom margin */
 }
 
 /* Animation Styles */
@@ -304,6 +350,49 @@ header .join-us-text {
   display: block;
 }
 
+.owner-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.owner-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.owner-text {
+  flex: 1;
+}
+
+.owner-name {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #2a6f6c;
+  margin-top: 20px; /* Add some spacing from the text */
+}
+
+/* Specific styles for mobile */
+@media (max-width: 768px) {
+  .owner-section {
+    flex-direction: column;
+    text-align: center; /* Center text for better appearance */
+  }
+
+  .owner-photo {
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Set a maximum width for better appearance */
+  }
+
+  .owner-name {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .desktop-logo {
     display: none;
@@ -381,11 +470,9 @@ header .join-us-text {
   opacity: 1;
 }
 
-
 .finance-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
@@ -394,7 +481,6 @@ header .join-us-text {
   border: 1px solid #95c0c1;
   border-radius: 8px;
   padding: 1rem;
-  flex: 1 1 calc(50% - 1rem);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
