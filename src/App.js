@@ -5,6 +5,7 @@ import { FaRegCalendarCheck } from "react-icons/fa6";
 import "./App.css";
 import logoDesktop from "./images/logo-desktop.png"; // Desktop logo
 import logoMobile from "./images/logo-mobile.png"; // Mobile logo
+import ownerPhoto1 from "./team/team5.webp";
 
 function App() {
   const [name, setName] = useState("");
@@ -184,21 +185,28 @@ function App() {
       <main>
         <section
           id="review"
-          className="fade-up"
+          className="fade-up section-bg-blue"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h2>Хто ми</h2>
-          <p>
-            Ми - центр корекції та розвитку мовлення для дітей, що сприяє
-            мовленнєвому розвитку та соціальній інтеграції дітей з різними
-            мовленнєвими порушеннями. Наша команда професіоналів, включаючи
-            логопедів, психологів, педагогів та медичних працівників, допомагає
-            дітям знайти свій голос і виразити себе.
-          </p>
+          <div className="owner-section">
+            <img src={ownerPhoto1} alt="Owner" className="owner-photo" />
+            <div className="owner-text">
+              <p>
+                Ми - центр корекції та розвитку мовлення для дітей, що сприяє
+                мовленнєвому розвитку та соціальній інтеграції дітей з різними
+                мовленнєвими порушеннями. Наша команда професіоналів, включаючи
+                логопедів, психологів, педагогів та медичних працівників,
+                допомагає дітям знайти свій голос і виразити себе.
+              </p>
+            </div>
+          </div>
+          <p className="owner-name">Ірина Волкова</p>
         </section>
+
         <section
           id="service"
-          className="fade-up"
+          className="fade-up section-bg-yellow"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>Наші послуги</h2>
@@ -231,7 +239,7 @@ function App() {
         </section>
         <section
           id="franchise"
-          className="fade-up"
+          className="fade-up section-bg-green"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2>Переваги франшизи</h2>
@@ -272,7 +280,7 @@ function App() {
         </section>
         <section
           id="points"
-          className="fade-up"
+          className="fade-up section-bg-orange"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>Вимоги до франчайзі</h2>
@@ -292,14 +300,14 @@ function App() {
         </section>
         <section
           id="finance"
-          className="fade-up"
+          className="fade-up section-bg-purple"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2>Фінансові умови</h2>
           <div className="finance-container">
             <div className="finance-item">
               <div className="finance-icon">
-                <i class="fas fa-hand-holding-usd"></i>
+                <i className="fas fa-hand-holding-usd"></i>
               </div>
               <div className="finance-text">
                 <h3>Первинний внесок</h3>
@@ -308,7 +316,7 @@ function App() {
             </div>
             <div className="finance-item">
               <div className="finance-icon">
-                <i class="fas fa-percentage"></i>
+                <i className="fas fa-percentage"></i>
               </div>
               <div className="finance-text">
                 <h3>Роялті</h3>
@@ -317,7 +325,7 @@ function App() {
             </div>
             <div className="finance-item">
               <div className="finance-icon">
-                <i class="fas fa-wallet"></i>
+                <i className="fas fa-wallet"></i>
               </div>
               <div className="finance-text">
                 <h3>Інвестиції</h3>
@@ -326,7 +334,7 @@ function App() {
             </div>
             <div className="finance-item">
               <div className="finance-icon">
-                <i class="fas fa-chart-line"></i>
+                <i className="fas fa-chart-line"></i>
               </div>
               <div className="finance-text">
                 <h3>Дохідність</h3>
@@ -338,7 +346,7 @@ function App() {
 
         <section
           id="stage"
-          className="fade-up"
+          className="fade-up section-bg-pink"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2>Етапи відкриття</h2>
@@ -362,7 +370,7 @@ function App() {
         </section>
         <section
           id="support"
-          className="fade-up"
+          className="fade-up section-bg-cyan"
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <h2>Підтримка франчайзі</h2>
@@ -384,7 +392,7 @@ function App() {
         </section>
         <section
           id="contact"
-          className="fade-up"
+          className="fade-up section-bg-lightblue"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
           <h2>Контакти</h2>
