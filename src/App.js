@@ -176,13 +176,13 @@ function App() {
             </ul>
           </div>
         </nav>
-        <div className="join-us-text">
+      </header>
+      <main>
+        <section className="join-us-text">
           Приєднуйтесь до нашої родини та допоможіть дітям розкрити свій
           потенціал разом з Планета Терапії <br />
           <b>Де кожне слово має значення</b>
-        </div>
-      </header>
-      <main>
+        </section>
         <section
           id="review"
           className="fade-up section-bg-blue"

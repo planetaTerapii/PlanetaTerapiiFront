@@ -157,15 +157,6 @@ section p {
 }
 
 @media (max-width: 768px) {
-  header .join-us-text {
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    width: 90%;
-  }
-
   main {
     padding-top: 60px;
   }
@@ -184,7 +175,7 @@ main {
   max-width: 1200px;
   margin: 60px auto 0;
   padding: 2rem;
-  padding-top: 100px;
+  padding-top: 0;
   overflow-x: hidden;
   box-sizing: border-box;
 }
@@ -285,6 +276,15 @@ header {
   height: 100vh;
   overflow-x: hidden;
   box-sizing: border-box;
+  margin-bottom: 0; /* Added to remove the margin below the header */
+}
+
+.join-us-text {
+  margin: 0; /* Added to remove any margin */
+  padding: 1rem 0; /* Adjust padding as needed */
+  text-align: center; /* Center the text */
+  font-size: 1.2rem; /* Adjust font size as needed */
+  color: #2b4b4b; /* Adjust text color */
 }
 
 header h1,
@@ -308,21 +308,6 @@ header p {
   margin: 0.5rem 0;
 }
 
-header .join-us-text {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  color: white;
-  background-color: rgba(42, 111, 108, 0.7);
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  font-family: "Cunia", sans-serif;
-  text-align: center;
-  width: auto;
-}
-
 @media (max-width: 768px) {
   header {
     background-image: url("./images/Background2.webp");
@@ -334,15 +319,7 @@ header .join-us-text {
     padding: 0;
     margin: 0;
     margin-top: 50px;
-  }
-
-  header .join-us-text {
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    width: 90%;
+    margin-bottom: 0;
   }
 }
 
@@ -414,7 +391,6 @@ header .join-us-text {
   main {
     padding-top: 0;
     margin-top: 0;
-    padding-top: 100px;
   }
 }
 
