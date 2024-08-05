@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "lazysizes": "^5.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
@@ -15,11 +16,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run purifycss && npm run minify:js && npm run minify:html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "purifycss": "purifycss src/**/*.html src/**/*.js src/**/*.css --out src/css/purified.css --info --whitelist btn-primary active",
+    "minify:js": "uglifyjs src/js/*.js -o src/js/script.min.js",
+    "minify:html": "html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true -o src/index.min.html src/index.html"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +45,10 @@
   },
   "homepage": "https://planetaTerapii.github.io/PlanetaTerapiiFront",
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "cssnano": "^7.0.4",
+    "gh-pages": "^6.1.1",
+    "html-minifier": "^4.0.0",
+    "purify-css": "^1.2.5",
+    "uglify-js": "^3.19.1"
   }
 }

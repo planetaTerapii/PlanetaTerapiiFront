@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaEnvelope, FaInstagram } from "react-icons/fa";
+import "lazysizes";
+import "lazysizes/plugins/attrchange/ls.attrchange";
 import { TbMapSearch } from "react-icons/tb";
 import { FaRegCalendarCheck } from "react-icons/fa6";
-import "./App.css";
-import logoDesktop from "./images/logo-desktop.png"; // Desktop logo
-import logoMobile from "./images/logo-mobile.png"; // Mobile logo
+import "./css/App.css";
+import logoDesktop from "./images/logo-desktop.webp"; // Desktop logo
+import logoMobile from "./images/logo-mobile.webp"; // Mobile logo
 import ownerPhoto from "./images/profile.webp";
 
 function App() {
@@ -80,7 +82,7 @@ function App() {
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
     const offsetPosition = elementPosition - offset;
-  
+
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth",
@@ -113,16 +115,14 @@ function App() {
         <nav>
           <div className="nav-container">
             <img
-              src={logoDesktop}
+              data-src={logoDesktop}
               alt="Logo"
-              className="logo desktop-logo"
-              onClick={(e) => handleScroll(e, "header")}
+              className="logo desktop-logo lazyload"
             />
             <img
-              src={logoMobile}
+              data-src={logoMobile}
               alt="Logo"
-              className="logo mobile-logo"
-              onClick={(e) => handleScroll(e, "header")}
+              className="logo mobile-logo lazyload"
             />
             <div className="hamburger" onClick={handleMenuToggle}>
               <div></div>
@@ -190,7 +190,11 @@ function App() {
         >
           <h2>Хто ми</h2>
           <div className="owner-section">
-            <img src={ownerPhoto} alt="Owner" className="owner-photo" />
+            <img
+              data-src={ownerPhoto}
+              alt="Owner"
+              className="owner-photo lazyload"
+            />
             <div className="owner-text">
               <p>
                 Ми - центр корекції та розвитку мовлення для дітей, що сприяє

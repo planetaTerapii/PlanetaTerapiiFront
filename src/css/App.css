@@ -6,6 +6,20 @@ body {
   overflow-x: hidden;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -62,14 +76,12 @@ nav .hamburger div {
   transition: all 0.3s ease;
 }
 
-section ul,
-section ol {
+section ul,section ol {
   margin: 1rem 0 1rem 1.5rem;
   padding: 0;
 }
 
-section ul li,
-section ol li {
+section ul li,section ol li {
   color: #2b4b4b;
   line-height: 1.6;
   margin-bottom: 0.5rem;
@@ -132,17 +144,13 @@ section p {
   background-color: #bbdefb;
 }
 
-.section-bg-blue,
-.section-bg-yellow,
-.section-bg-green,
-.section-bg-orange,
-.section-bg-purple,
-.section-bg-pink,
-.section-bg-cyan,
-.section-bg-lightblue {
-  border-radius: 15px; /* Rounded corners */
-  padding: 40px 20px; /* Increased top and bottom padding */
-  margin: 40px 0; /* Increased top and bottom margin */
+.section-bg-blue,.section-bg-yellow,.section-bg-green,.section-bg-orange,.section-bg-purple,.section-bg-pink,.section-bg-cyan,.section-bg-lightblue {
+  border-radius: 15px;
+  /* Rounded corners */
+  padding: 40px 20px;
+  /* Increased top and bottom padding */
+  margin: 40px 0;
+  /* Increased top and bottom margin */
 }
 
 .fade-up {
@@ -216,16 +224,14 @@ form label {
   color: #2a6f6c;
 }
 
-form input,
-form textarea {
+form input,form textarea {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #95c0c1;
   border-radius: 4px;
 }
 
-form input::placeholder,
-form textarea::placeholder {
+form input::placeholder,form textarea::placeholder {
   color: #95c0c1;
 }
 
@@ -262,7 +268,7 @@ footer a:hover {
 }
 
 header {
-  background-image: url("./images/Background.webp");
+  background-image: url("../images/Background.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -276,20 +282,24 @@ header {
   height: 100vh;
   overflow-x: hidden;
   box-sizing: border-box;
-  margin-bottom: 0; /* Added to remove the margin below the header */
+  margin-bottom: 0;
+  /* Added to remove the margin below the header */
 }
 
 .join-us-text {
-  margin: 0; /* Added to remove any margin */
-  padding: 1rem 0; /* Adjust padding as needed */
-  text-align: center; /* Center the text */
-  font-size: 1.2rem; /* Adjust font size as needed */
-  color: #2b4b4b; /* Adjust text color */
+  margin: 0;
+  /* Added to remove any margin */
+  padding: 1rem 0;
+  /* Adjust padding as needed */
+  text-align: center;
+  /* Center the text */
+  font-size: 1.2rem;
+  /* Adjust font size as needed */
+  color: #2b4b4b;
+  /* Adjust text color */
 }
 
-header h1,
-header h2,
-header p {
+header h1,header h2,header p {
   color: #2b4b4b;
 }
 
@@ -310,7 +320,7 @@ header p {
 
 @media (max-width: 768px) {
   header {
-    background-image: url("./images/Background2.webp");
+    background-image: url("../images/Background2.webp");
     height: 180px;
     width: 100%;
     background-size: cover;
