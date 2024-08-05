@@ -116,11 +116,13 @@ function App() {
           <div className="nav-container">
             <img
               data-src={logoDesktop}
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt="Logo"
               className="logo desktop-logo lazyload"
             />
             <img
               data-src={logoMobile}
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt="Logo"
               className="logo mobile-logo lazyload"
             />
