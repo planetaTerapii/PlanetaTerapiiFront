@@ -1,16 +1,16 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #dae3e5;
-  color: #2b4b4b; /* Set default text color */
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  background-color: #f7f9fc;
+  color: #2b4b4b;
+  overflow-x: hidden;
 }
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(218, 227, 229, 0.9); /* Semi-transparent background */
+  background-color: rgba(42, 111, 108, 0.9);
   z-index: 1000;
 }
 
@@ -18,13 +18,13 @@ nav .nav-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between; /* Ensure space between logo and menu */
-  align-items: center; /* Align items vertically centered */
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
 }
 
 nav .desktop-logo {
-  height: 80px; /* Adjust the height of the logo as needed */
+  height: 80px;
 }
 
 nav ul {
@@ -40,12 +40,13 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #2a6f6c;
+  color: #ffffff;
   text-decoration: none;
+  font-weight: bold;
 }
 
 nav ul li a:hover {
-  color: #6ba4a3; /* Hover color for links */
+  color: #c8e6c9;
 }
 
 nav .hamburger {
@@ -56,36 +57,42 @@ nav .hamburger {
 nav .hamburger div {
   width: 25px;
   height: 3px;
-  background-color: #2a6f6c;
+  background-color: #ffffff;
   margin: 5px;
   transition: all 0.3s ease;
 }
 
-/* Ensure unordered and ordered lists have proper margin and padding */
 section ul,
 section ol {
-  margin: 1rem 0 1rem 1.5rem; /* Adjust as needed */
+  margin: 1rem 0 1rem 1.5rem;
   padding: 0;
 }
 
 section ul li,
 section ol li {
-  color: #2b4b4b; /* Match text color */
+  color: #2b4b4b;
   line-height: 1.6;
-  margin-bottom: 0.5rem; /* Add spacing between list items */
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.list-icon {
+  margin-right: 10px;
+  color: #4caf50;
 }
 
 section {
   padding: 2rem 0;
-  overflow: hidden; /* Prevent overflow during animations */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 section h2 {
   color: #2a6f6c;
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-family: 'Comic Sans MS', sans-serif; /* Playful font */
+  font-family: 'Comic Sans MS', sans-serif;
 }
 
 section p {
@@ -94,35 +101,35 @@ section p {
 }
 
 .section-bg-blue {
-  background-color: #a2d5f2;
+  background-color: #b3e5fc;
 }
 
 .section-bg-yellow {
-  background-color: #f9f871;
+  background-color: #fff9c4;
 }
 
 .section-bg-green {
-  background-color: #a3de83;
+  background-color: #c8e6c9;
 }
 
 .section-bg-orange {
-  background-color: #ffb677;
+  background-color: #ffe0b2;
 }
 
 .section-bg-purple {
-  background-color: #d4a5a5;
+  background-color: #e1bee7;
 }
 
 .section-bg-pink {
-  background-color: #ffabbc;
+  background-color: #f8bbd0;
 }
 
 .section-bg-cyan {
-  background-color: #8dd7cf;
+  background-color: #b2ebf2;
 }
 
 .section-bg-lightblue {
-  background-color: #c9e8f2;
+  background-color: #bbdefb;
 }
 
 .section-bg-blue,
@@ -134,11 +141,10 @@ section p {
 .section-bg-cyan,
 .section-bg-lightblue {
   border-radius: 15px; /* Rounded corners */
-  padding: 20px; /* Top and bottom padding */
-  margin: 20px 0; /* Top and bottom margin */
+  padding: 40px 20px; /* Increased top and bottom padding */
+  margin: 40px 0; /* Increased top and bottom margin */
 }
 
-/* Animation Styles */
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
@@ -150,44 +156,43 @@ section p {
   transform: translateY(0);
 }
 
-/* Specific styles for mobile */
 @media (max-width: 768px) {
   header .join-us-text {
-    bottom: 10px; /* Position the text at the bottom for mobile */
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.2rem; /* Adjust size for mobile */
-    padding: 0.5rem 1rem; /* Adjust padding for mobile */
-    width: 90%; /* Make it wider on mobile */
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    width: 90%;
   }
 
   main {
-    padding-top: 60px; /* Adjust padding for mobile to account for the navbar height */
+    padding-top: 60px;
   }
 
   nav ul li a {
-    font-size: 1.5rem; /* Larger font size for mobile menu items */
-    color: #2a6f6c; /* Ensure link color matches design */
+    font-size: 1.5rem;
+    color: #2a6f6c;
   }
 
   nav ul li a:hover {
-    color: #6ba4a3; /* Hover color for mobile links */
+    color: #6ba4a3;
   }
 }
 
 main {
-  max-width: 1200px; /* Increase the max-width for wider sections */
+  max-width: 1200px;
   margin: 60px auto 0;
   padding: 2rem;
-  padding-top: 100px; /* Increase padding to account for the navbar height */
-  overflow-x: hidden; /* Prevent horizontal overflow */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  padding-top: 100px;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .contact-icons {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem; /* Adjusted to appear after the form */
+  margin-top: 1rem;
   justify-content: center;
 }
 
@@ -205,8 +210,8 @@ form {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1rem; /* Padding added to form for spacing */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 form div {
@@ -230,7 +235,7 @@ form textarea {
 
 form input::placeholder,
 form textarea::placeholder {
-  color: #95c0c1; /* Placeholder text color */
+  color: #95c0c1;
 }
 
 form button {
@@ -252,8 +257,8 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  overflow-x: hidden; /* Prevent horizontal overflow */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 footer a {
@@ -266,10 +271,10 @@ footer a:hover {
 }
 
 header {
-  background-image: url("./images/Background.webp"); /* Ensure this path points to your main background image in the public directory */
+  background-image: url("./images/Background.webp");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -277,68 +282,67 @@ header {
   font-family: "Cunia", sans-serif;
   text-align: center;
   position: relative;
-  height: 100vh; /* Full height for desktop */
-  overflow-x: hidden; /* Prevent horizontal overflow */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 header h1,
 header h2,
 header p {
-  color: #2b4b4b; /* Text color in the header */
+  color: #2b4b4b;
 }
 
 header h1 {
-  font-size: 1.5rem; /* Smaller font size for h1 */
+  font-size: 1.5rem;
   margin: 0.5rem 0;
 }
 
 header h2 {
-  font-size: 1rem; /* Smaller font size for h2 */
+  font-size: 1rem;
   margin: 0.5rem 0;
 }
 
 header p {
-  font-size: 0.5rem; /* Smaller font size for paragraph */
+  font-size: 0.5rem;
   margin: 0.5rem 0;
 }
 
 header .join-us-text {
   position: absolute;
-  bottom: 20px; /* Position the text at the bottom */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2rem; /* Adjust size as needed */
-  color: white; /* Ensure text color is visible */
-  background-color: rgba(42, 111, 108, 0.7); /* Semi-transparent background */
-  padding: 1rem 2rem; /* Padding for better readability */
-  border-radius: 10px; /* Rounded corners */
-  font-family: "Cunia", sans-serif; /* Use the Cunia font */
-  text-align: center; /* Center the text */
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(42, 111, 108, 0.7);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-family: "Cunia", sans-serif;
+  text-align: center;
   width: auto;
 }
 
 @media (max-width: 768px) {
   header {
-    background-image: url("./images/Background2.webp"); /* Ensure this path points to your main background image in the public directory */
-    height: 180px; /* Set a fixed height for the header */
+    background-image: url("./images/Background2.webp");
+    height: 180px;
     width: 100%;
-    background-size: cover; /* Ensures the entire image covers the header */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-    background-position: center; /* Centers the background image */
-    padding: 0; /* Remove any padding */
-    margin: 0; /* Remove any margin */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    margin: 0;
     margin-top: 50px;
   }
 
   header .join-us-text {
-    position: absolute;
-    bottom: 10px; /* Position the text at the bottom for mobile */
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.2rem; /* Adjust size for mobile */
-    padding: 0.5rem 1rem; /* Adjust padding for mobile */
-    width: 90%; /* Make it wider on mobile */
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    width: 90%;
   }
 }
 
@@ -359,7 +363,7 @@ header .join-us-text {
 .owner-photo {
   width: 200px;
   height: auto;
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -372,19 +376,18 @@ header .join-us-text {
   font-weight: bold;
   font-size: 1.2rem;
   color: #2a6f6c;
-  margin-top: 20px; /* Add some spacing from the text */
+  margin-top: 20px;
 }
 
-/* Specific styles for mobile */
 @media (max-width: 768px) {
   .owner-section {
     flex-direction: column;
-    text-align: center; /* Center text for better appearance */
+    text-align: center;
   }
 
   .owner-photo {
-    width: 100%; /* Full width on mobile */
-    max-width: 300px; /* Set a maximum width for better appearance */
+    width: 100%;
+    max-width: 300px;
   }
 
   .owner-name {
@@ -405,13 +408,13 @@ header .join-us-text {
 
 @media (max-width: 768px) {
   nav .mobile-logo {
-    height: 50px; /* Adjust the height of the logo as needed */
+    height: 50px;
   }
 
   main {
-    padding-top: 0; /* Remove extra padding that might cause empty space */
-    margin-top: 0; /* Remove any margin that might cause empty space */
-    padding-top: 100px; /* Increase padding to account for the navbar height */
+    padding-top: 0;
+    margin-top: 0;
+    padding-top: 100px;
   }
 }
 
@@ -436,7 +439,7 @@ header .join-us-text {
     right: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(218, 227, 229, 0.9);
+    background-color: rgba(42, 111, 108, 0.9);
     padding-top: 4rem;
     justify-content: center;
     align-items: center;
@@ -448,12 +451,12 @@ header .join-us-text {
   }
 
   nav ul li a {
-    font-size: 1.5rem; /* Larger font size for mobile menu items */
-    color: #2a6f6c; /* Ensure link color matches design */
+    font-size: 1.5rem;
+    color: #ffffff;
   }
 
   nav ul li a:hover {
-    color: #6ba4a3; /* Hover color for mobile links */
+    color: #c8e6c9;
   }
 }
 
@@ -489,12 +492,7 @@ header .join-us-text {
 
 .finance-icon {
   font-size: 2rem;
-  color: #2a6f6c;
-}
-
-.finance-text {
-  display: flex;
-  flex-direction: column;
+  color: #4caf50;
 }
 
 .finance-text h3 {

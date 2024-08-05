@@ -5,7 +5,7 @@ import { FaRegCalendarCheck } from "react-icons/fa6";
 import "./App.css";
 import logoDesktop from "./images/logo-desktop.png"; // Desktop logo
 import logoMobile from "./images/logo-mobile.png"; // Mobile logo
-import ownerPhoto1 from "./team/team5.webp";
+import ownerPhoto from "./images/profile.webp";
 
 function App() {
   const [name, setName] = useState("");
@@ -75,12 +75,12 @@ function App() {
   const handleScroll = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
-    const offset = window.innerWidth <= 768 ? 60 : 100;
+    const offset = window.innerWidth <= 768 ? 80 : 140; // Adjusted offset to account for new padding/margin
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
     const offsetPosition = elementPosition - offset;
-
+  
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth",
@@ -190,7 +190,7 @@ function App() {
         >
           <h2>Хто ми</h2>
           <div className="owner-section">
-            <img src={ownerPhoto1} alt="Owner" className="owner-photo" />
+            <img src={ownerPhoto} alt="Owner" className="owner-photo" />
             <div className="owner-text">
               <p>
                 Ми - центр корекції та розвитку мовлення для дітей, що сприяє
@@ -203,7 +203,6 @@ function App() {
           </div>
           <p className="owner-name">Ірина Волкова</p>
         </section>
-
         <section
           id="service"
           className="fade-up section-bg-yellow"
@@ -212,29 +211,74 @@ function App() {
           <h2>Наші послуги</h2>
           <h3>Індивідуальні заняття:</h3>
           <ul>
-            <li>Первинна діагностика (логопед)</li>
-            <li>Психолог</li>
-            <li>Сенсорна інтеграція</li>
-            <li>Логопед</li>
-            <li>Дефектолог</li>
-            <li>Діагностика звуковимови</li>
-            <li>Первинна діагностика (нейропсихолог)</li>
-            <li>Нейропсихолог</li>
-            <li>Логопедичний масаж</li>
-            <li>Мозочкова стимуляція</li>
-            <li>Доготерапія</li>
-            <li>Консультація поведінкового терапевта</li>
-            <li>Поведінковий терапевт</li>
-            <li>Польська мова</li>
+            <li>
+              <i className="fas fa-puzzle-piece list-icon"></i> Первинна
+              діагностика (логопед)
+            </li>
+            <li>
+              <i className="fas fa-child list-icon"></i> Психолог
+            </li>
+            <li>
+              <i className="fas fa-brain list-icon"></i> Сенсорна інтеграція
+            </li>
+            <li>
+              <i className="fas fa-comments list-icon"></i> Логопед
+            </li>
+            <li>
+              <i className="fas fa-chalkboard-teacher list-icon"></i> Дефектолог
+            </li>
+            <li>
+              <i className="fas fa-microscope list-icon"></i> Діагностика
+              звуковимови
+            </li>
+            <li>
+              <i className="fas fa-user-md list-icon"></i> Первинна діагностика
+              (нейропсихолог)
+            </li>
+            <li>
+              <i className="fas fa-user-nurse list-icon"></i> Нейропсихолог
+            </li>
+            <li>
+              <i className="fas fa-hand-holding-heart list-icon"></i>{" "}
+              Логопедичний масаж
+            </li>
+            <li>
+              <i className="fas fa-basketball-ball list-icon"></i> Мозочкова
+              стимуляція
+            </li>
+            <li>
+              <i className="fas fa-dog list-icon"></i> Доготерапія
+            </li>
+            <li>
+              <i className="fas fa-user-friends list-icon"></i> Консультація
+              поведінкового терапевта
+            </li>
+            <li>
+              <i className="fas fa-users list-icon"></i> Поведінковий терапевт
+            </li>
+            <li>
+              <i className="fas fa-language list-icon"></i> Польська мова
+            </li>
           </ul>
 
           <h3>Групові заняття:</h3>
           <ul>
-            <li>Розвиток побутових та соціальних навичок</li>
-            <li>Розвиток мовлення</li>
-            <li>Підготовка до школи</li>
-            <li>Доготерапія</li>
-            <li>Польська мова</li>
+            <li>
+              <i className="fas fa-users list-icon"></i> Розвиток побутових та
+              соціальних навичок
+            </li>
+            <li>
+              <i className="fas fa-comments list-icon"></i> Розвиток мовлення
+            </li>
+            <li>
+              <i className="fas fa-school list-icon"></i> Підготовка до школи
+            </li>
+            <li>
+              <i className="fas fa-dog list-icon"></i> Доготерапія
+            </li>
+            <li>
+              <i className="fas fa-language list-icon"></i> Польська мова
+            </li>
           </ul>
         </section>
         <section
@@ -245,36 +289,44 @@ function App() {
           <h2>Переваги франшизи</h2>
           <ul>
             <li>
-              Перевірена модель бізнесу: Ви отримуєте доступ до перевіреної та
-              успішної моделі ведення бізнесу.
+              <i className="fas fa-check-circle list-icon"></i> Перевірена
+              модель бізнесу: Ви отримуєте доступ до перевіреної та успішної
+              моделі ведення бізнесу.
             </li>
             <li>
-              Навчання та підтримка: Франчайзі отримують комплексне навчання та
-              постійну підтримку на всіх етапах розвитку бізнесу.
+              <i className="fas fa-graduation-cap list-icon"></i> Навчання та
+              підтримка: Франчайзі отримують комплексне навчання та постійну
+              підтримку на всіх етапах розвитку бізнесу.
             </li>
             <li>
-              Ексклюзивність території: Захист від конкуренції всередині
-              франчайзингової мережі на визначеній території.
+              <i className="fas fa-map-marker-alt list-icon"></i> Ексклюзивність
+              території: Захист від конкуренції всередині франчайзингової мережі
+              на визначеній території.
             </li>
             <li>
-              Маркетингова підтримка: Доступ до централізованих маркетингових
-              кампаній та матеріалів.
+              <i className="fas fa-bullhorn list-icon"></i> Маркетингова
+              підтримка: Доступ до централізованих маркетингових кампаній та
+              матеріалів.
             </li>
             <li>
-              Розроблені програми: Готові програми розвитку, корекції та
-              навчання для дітей різного віку.
+              <i className="fas fa-cogs list-icon"></i> Розроблені програми:
+              Готові програми розвитку, корекції та навчання для дітей різного
+              віку.
             </li>
             <li>
-              Бренд: Центр розвитку та корекції є брендом, що надає послуги з
-              розвитку та корекції.
+              <i className="fas fa-building list-icon"></i> Бренд: Центр
+              розвитку та корекції є брендом, що надає послуги з розвитку та
+              корекції.
             </li>
             <li>
-              Тип франшизи: Бізнес-франшиза дозволяє вести бізнес під відомим
-              брендом з підтримкою та інструкціями.
+              <i className="fas fa-briefcase list-icon"></i> Тип франшизи:
+              Бізнес-франшиза дозволяє вести бізнес під відомим брендом з
+              підтримкою та інструкціями.
             </li>
             <li>
-              Розташування: Франшиза може бути відкрита в будь-якому місті
-              Польщі, що забезпечує гнучкість у виборі локації.
+              <i className="fas fa-city list-icon"></i> Розташування: Франшиза
+              може бути відкрита в будь-якому місті Польщі, що забезпечує
+              гнучкість у виборі локації.
             </li>
           </ul>
         </section>
@@ -286,15 +338,16 @@ function App() {
           <h2>Вимоги до франчайзі</h2>
           <ul>
             <li>
-              Фінансові ресурси: Наявність необхідного капіталу для інвестицій.
+              <i className="fas fa-wallet list-icon"></i> Фінансові ресурси:
+              Наявність необхідного капіталу для інвестицій.
             </li>
             <li>
-              Досвід роботи з дітьми: Бажано мати досвід роботи з дітьми або в
-              освіті.
+              <i className="fas fa-user-graduate list-icon"></i> Досвід роботи з
+              дітьми: Бажано мати досвід роботи з дітьми або в освіті.
             </li>
             <li>
-              Відданість справі: Готовність працювати для покращення життя
-              дітей.
+              <i className="fas fa-heart list-icon"></i> Відданість справі:
+              Готовність працювати для покращення життя дітей.
             </li>
           </ul>
         </section>
@@ -351,20 +404,29 @@ function App() {
         >
           <h2>Етапи відкриття</h2>
           <ol>
-            <li>Заявка: Подання заявки на франшизу.</li>
-            <li>Співбесіда: Інтерв'ю з потенційним франчайзі.</li>
             <li>
-              Підписання договору: Погодження умов та підписання
-              франчайзингового договору.
-            </li>
-            <li>Навчання: Проходження обов'язкового навчання.</li>
-            <li>
-              Підготовка приміщення: Вибір та облаштування приміщення згідно
-              стандартів.
+              <i className="fas fa-file-signature list-icon"></i> Заявка:
+              Подання заявки на франшизу.
             </li>
             <li>
-              Відкриття: Офіційне відкриття центру з участю представників
-              франчайзера.
+              <i className="fas fa-comments list-icon"></i> Співбесіда: Інтерв'ю
+              з потенційним франчайзі.
+            </li>
+            <li>
+              <i className="fas fa-handshake list-icon"></i> Підписання
+              договору: Погодження умов та підписання франчайзингового договору.
+            </li>
+            <li>
+              <i className="fas fa-chalkboard-teacher list-icon"></i> Навчання:
+              Проходження обов'язкового навчання.
+            </li>
+            <li>
+              <i className="fas fa-tools list-icon"></i> Підготовка приміщення:
+              Вибір та облаштування приміщення згідно стандартів.
+            </li>
+            <li>
+              <i className="fas fa-ribbon list-icon"></i> Відкриття: Офіційне
+              відкриття центру з участю представників франчайзера.
             </li>
           </ol>
         </section>
@@ -376,17 +438,20 @@ function App() {
           <h2>Підтримка франчайзі</h2>
           <ul>
             <li>
-              Навчання персоналу: Проведення тренінгів та семінарів для
-              працівників.
+              <i className="fas fa-chalkboard-teacher list-icon"></i> Навчання
+              персоналу: Проведення тренінгів та семінарів для працівників.
             </li>
             <li>
-              Методична підтримка: Надання методичних матеріалів та програм.
+              <i className="fas fa-book list-icon"></i> Методична підтримка:
+              Надання методичних матеріалів та програм.
             </li>
             <li>
-              Консультації: Постійні консультації з питань ведення бізнесу.
+              <i className="fas fa-headset list-icon"></i> Консультації:
+              Постійні консультації з питань ведення бізнесу.
             </li>
             <li>
-              Контроль якості: Регулярний моніторинг та оцінка роботи центру.
+              <i className="fas fa-check-circle list-icon"></i> Контроль якості:
+              Регулярний моніторинг та оцінка роботи центру.
             </li>
           </ul>
         </section>
