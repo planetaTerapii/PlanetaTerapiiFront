@@ -192,6 +192,7 @@ function App() {
           <div className="owner-section">
             <img
               data-src={ownerPhoto}
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
               alt="Owner"
               className="owner-photo lazyload"
             />

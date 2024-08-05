@@ -348,8 +348,9 @@ header p {
 }
 
 .owner-photo {
-  width: 200px;
-  height: auto;
+  max-width: 100%;
+  width: 200px; 
+  height: auto; 
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

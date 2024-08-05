@@ -16,14 +16,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run purifycss && npm run minify:js && npm run minify:html",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "purifycss": "purifycss src/**/*.html src/**/*.js src/**/*.css --out src/css/purified.css --info --whitelist btn-primary active",
-    "minify:js": "uglifyjs src/js/*.js -o src/js/script.min.js",
-    "minify:html": "html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true -o src/index.min.html src/index.html"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
