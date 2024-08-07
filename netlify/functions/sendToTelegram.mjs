@@ -1,8 +1,7 @@
-// netlify/functions/sendToTelegram.js
+// netlify/functions/sendToTelegram.mjs
+import fetch from 'node-fetch';
 
-const fetch = require('node-fetch');
-
-exports.handler = async function (event, context) {
+export async function handler(event, context) {
   const { name, email, phone, message } = JSON.parse(event.body);
 
   const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
@@ -44,4 +43,4 @@ exports.handler = async function (event, context) {
       body: JSON.stringify({ error: error.message }),
     };
   }
-};
+}
