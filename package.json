@@ -16,8 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build:css": "postcss src/css/App.css -o src/css/App.min.css",
-    "build": "npm run build:css && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

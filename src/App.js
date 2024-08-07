@@ -96,22 +96,19 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(
-      "https://planetaterapiibackend.onrender.com/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, phone, message }),
-      }
-    );
+    const response = await fetch('/.netlify/functions/sendToTelegram', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, phone, message }),
+    });
     const data = await response.json();
     console.log(data.message);
     setFormSubmitted(true);
     setShowSuccessMessage(true);
     setTimeout(() => setShowSuccessMessage(false), 5000);
-  };
+  };  
 
   return (
     <div className="App">
