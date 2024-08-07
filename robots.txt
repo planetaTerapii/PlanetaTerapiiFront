@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://planetaterapii.github.io/PlanetaTerapiiFront/sitemap.xml
