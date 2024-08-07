@@ -229,21 +229,25 @@ footer a:hover {
   color: #dae3e5;
 }
 header {
+  position: relative;
+  height: 100vh;
+  display: flex;
   align-items: center;
-  background-image: url(../images/Background.webp);
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  justify-content: center;
+  text-align: center;
   box-sizing: border-box;
   color: #fff;
-  display: flex;
   font-family: Cunia, sans-serif;
-  height: 100vh;
-  justify-content: center;
-  margin-bottom: 0;
   overflow-x: hidden;
-  position: relative;
-  text-align: center;
+}
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 .join-us-text {
   color: #2b4b4b;
@@ -266,7 +270,6 @@ header p {
 }
 @media (max-width: 768px) {
   header {
-    background-image: url(../images/Background2.webp);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -318,6 +321,8 @@ header p {
   }
   .mobile-logo {
     display: block;
+    height: 50px;
+    width: auto;
   }
   nav .mobile-logo {
     height: 50px;

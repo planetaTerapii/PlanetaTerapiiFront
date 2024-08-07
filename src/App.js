@@ -2,12 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaEnvelope, FaInstagram } from "react-icons/fa";
 import "lazysizes";
 import "lazysizes/plugins/attrchange/ls.attrchange";
+import "lazysizes/plugins/bgset/ls.bgset";
 import { TbMapSearch } from "react-icons/tb";
+import { FaFacebook } from "react-icons/fa";
 import { FaRegCalendarCheck } from "react-icons/fa6";
 import "./css/App.css";
 import logoDesktop from "./images/logo-desktop.webp"; // Desktop logo
 import logoMobile from "./images/logo-mobile.webp"; // Mobile logo
 import ownerPhoto from "./images/profile.webp";
+import backgroundDesktop from "./images/Background.webp";
+import backgroundMobile from "./images/Background2.webp";
 
 function App() {
   const [name, setName] = useState("");
@@ -112,6 +116,12 @@ function App() {
   return (
     <div className="App">
       <header id="header">
+        <img
+          data-srcset={`${backgroundMobile} 768w, ${backgroundDesktop} 1200w`}
+          sizes="(max-width: 768px) 768px, 1200px"
+          alt="Background"
+          className="header-background lazyload"
+        />
         <nav>
           <div className="nav-container">
             <img
@@ -546,6 +556,14 @@ function App() {
             >
               <FaRegCalendarCheck />
             </a>
+            <a
+                href="https://www.facebook.com/planeta.terapii.wro"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="FaFacebook"
+              >
+                <FaFacebook />
+              </a>
           </div>
         </section>
       </main>
