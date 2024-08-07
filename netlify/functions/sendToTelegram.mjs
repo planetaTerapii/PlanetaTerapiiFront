@@ -2,10 +2,15 @@
 import fetch from 'node-fetch';
 
 export async function handler(event, context) {
+  console.log('Function is invoked');
   const { name, email, phone, message } = JSON.parse(event.body);
+
+  console.log('Received data:', { name, email, phone, message });
 
   const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
   const telegramChatId = process.env.TELEGRAM_CHAT_ID;
+
+  console.log('Using Telegram Token and Chat ID:', telegramToken, telegramChatId);
 
   const text = `New contact form submission:
     Name: ${name}
@@ -29,6 +34,8 @@ export async function handler(event, context) {
 
     const data = await response.json();
 
+    console.log('Response from Telegram:', data);
+
     if (!data.ok) {
       throw new Error(data.description);
     }
@@ -38,6 +45,7 @@ export async function handler(event, context) {
       body: JSON.stringify({ message: 'Message sent to Telegram' }),
     };
   } catch (error) {
+    console.error('Error sending message to Telegram:', error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: error.message }),
