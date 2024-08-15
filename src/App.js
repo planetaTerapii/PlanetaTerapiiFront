@@ -97,25 +97,22 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        "https://planetaterapii.netlify.app/.netlify/functions/sendToTelegram",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email, phone, message }),
-        }
-      );
+      const response = await fetch('https://hilarious-speculoos-b9045f.netlify.app/.netlify/functions/sendToTelegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
       const data = await response.json();
       console.log(data.message);
       setFormSubmitted(true);
       setShowSuccessMessage(true);
       setTimeout(() => setShowSuccessMessage(false), 5000);
     } catch (error) {
-      console.error("Error sending form data:", error);
+      console.error('Error sending form data:', error);
     }
-  };
+  };  
 
   return (
     <div className="App">
