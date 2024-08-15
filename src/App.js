@@ -97,7 +97,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/.netlify/functions/sendToTelegram', {
+      const response = await fetch('https://twój-netlify-url/.netlify/functions/sendToTelegram', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
