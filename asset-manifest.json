@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/PlanetaTerapiiFront/static/css/main.809d38f6.css",
+    "main.js": "/PlanetaTerapiiFront/static/js/main.f0aab7fb.js",
+    "static/media/Background.webp": "/PlanetaTerapiiFront/static/media/Background.a87d5cf65e175f101854.webp",
+    "static/media/Background2.webp": "/PlanetaTerapiiFront/static/media/Background2.687229fcbdb586b5c1fd.webp",
+    "static/media/logo-desktop.webp": "/PlanetaTerapiiFront/static/media/logo-desktop.6e7d826fa0072faf3240.webp",
+    "static/media/logo-mobile.webp": "/PlanetaTerapiiFront/static/media/logo-mobile.326fa06379685807b3a8.webp",
+    "static/media/profile.webp": "/PlanetaTerapiiFront/static/media/profile.20888c28ad93bea76717.webp",
+    "index.html": "/PlanetaTerapiiFront/index.html",
+    "main.809d38f6.css.map": "/PlanetaTerapiiFront/static/css/main.809d38f6.css.map",
+    "main.f0aab7fb.js.map": "/PlanetaTerapiiFront/static/js/main.f0aab7fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.809d38f6.css",
+    "static/js/main.f0aab7fb.js"
+  ]
+}
